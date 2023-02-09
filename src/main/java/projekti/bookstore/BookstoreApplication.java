@@ -21,7 +21,6 @@ public class BookstoreApplication {
 	Book book2 = new Book("Pekka ja Pätkä", "Ressu", 1 ,2);
 	repository.save(book1);
 	repository.save(book2);
-	//kommentti
 	}; 
 	}
 
