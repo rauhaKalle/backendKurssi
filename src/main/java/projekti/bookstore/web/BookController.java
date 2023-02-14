@@ -34,7 +34,8 @@ public class BookController {
 		return "redirect:../booklist";
 	}
 	
-	//kesken
+	
+	//todo
 	@RequestMapping(value ="/add")
 	public String addBook(Model model){
 		model.addAttribute("book", new Book());
