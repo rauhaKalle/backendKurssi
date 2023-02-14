@@ -17,11 +17,10 @@ public class BookstoreApplication {
 	@Bean 
 	public CommandLineRunner demo(BookRepository repository) 
 	{return (args) -> { 
-	Book book1 = new Book("aku ankka", "jaska jokunen",1,2);
-	Book book2 = new Book("Pekka ja Pätkä", "Ressu", 1 ,2);
+	Book book1 = new Book("aku ankka", "jaska jokunen",1958,232423423);
+	Book book2 = new Book("Pekka ja Pätkä", "Ressu", 1998 , 78438778);
 	repository.save(book1);
 	repository.save(book2);
-	// komma
 	}; 
 	}
 
