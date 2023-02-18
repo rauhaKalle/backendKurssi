@@ -9,7 +9,6 @@
 <div>
 	<table>
 		<tr>
-			<th>Book id</th>
 			<th>Book title</th>
 			<th>Book author</th>
 			<th>Book publish year</th>
@@ -17,12 +16,12 @@
 		</tr>
 
 		<tr th:each="book : ${books}">
-			<td th:text="${book.id}">id</td>
 			<td th:text="${book.title}">title</td>
 			<td th:text="${book.author}">author</td>
 			<td th:text="${book.publishYear}">publish year</td>
 			<td th:text="${book.isbn}">isbn</td>
 			<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+			<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
 		</tr>
 	</table>
 	<a href="/add" class="btn btn-primary">Add Book</a>

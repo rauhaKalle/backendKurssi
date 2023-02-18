@@ -1,19 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Book form</title>
+    <title>Booktlist</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Book</h1>
-	<form method="post" action="#" th:action="@{/save}"  th:object= ${book} >
-	<p>ID: <input type="text" th:field="${book.id}" /></p>
-	<p>Title: <input type="text" th:field="${book.title}" /></p>
-	<p>Author: <input type="text" th:field="${book.author}" /></p>
-	<p>Publish year: <input type="text" th:field="${book.publishYear}" /></p>
-	<p>Isbn: <input type="text" th:field="${book.isbn}" /></p>
-	<input type="submit" value="save" /> <input type="reset" value="Reset" />
-	</form>
-    
+	<h1>Add book</h1>
+	<div>
+		<form th:object="${book}" th:action="@{save}" action="#" method="post">
+		  	<label for="title">Title</label>
+			<input type="text" id="title" th:field="*{title}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+		  	<label for="author">Author</label>
+			<input type="text" id="author" th:field="*{author}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+		  	<label for="publishYear">Publish year</label>
+			<input type="text" th:field="*{publishYear}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="isbn">Isbn</label>
+			<input type="text" th:field="*{isbn}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<input type="submit" value="Save"></input>
+		</form>
+	</div>
 </body>
 </html>
