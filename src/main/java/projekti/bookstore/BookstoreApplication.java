@@ -20,21 +20,25 @@ public class BookstoreApplication {
 	@Bean 
 	public CommandLineRunner demo(BookRepository repository, CategoryRepository cRepository) 
 	{return (args) -> { 
-	Book book1 = new Book("aku ankka", "jaska jokunen",1958,232423423);
-	Book book2 = new Book("Pekka ja Pätkä", "Ressu", 1998 , 78438778);
-	repository.save(book1);
-	repository.save(book2);
-	
+		
 	Category c1 = new Category("Draama");
 	Category c2 = new Category("Komedia");
 	Category c3 = new Category("Trilleri");
 	cRepository.save(c1);
 	cRepository.save(c2);
 	cRepository.save(c3);
+		
+		
+	Book book1 = new Book("aku ankka", "jaska jokunen",1958,232423423,c2);
+	Book book2 = new Book("Pekka ja Pätkä", "Ressu", 1998 , 78438778, c1);
+	repository.save(book1);
+	repository.save(book2);
+	
 	
 	
 	
 	}; 
+	
 	}
 
 }
