@@ -2,6 +2,8 @@ package projekti.bookstore.domain;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,8 @@ public class Book {
 	private int publishYear, isbn;
 	
 	@ManyToOne
+	// @JsonIgnoreProperties - one way to avoid infinite loop during JSON serialization/deserialization with bidirectional relationships
+    @JsonIgnoreProperties ("books") 
 	@JoinColumn(name ="categoryid")
 	private Category categoryid;
 		

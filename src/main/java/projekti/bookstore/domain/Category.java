@@ -2,6 +2,8 @@ package projekti.bookstore.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +21,8 @@ public class Category {
 	private String name;
 	
 	@OneToMany(cascade =CascadeType.ALL, mappedBy = "categoryid")
+	//@JsonIgnore
+		@JsonIgnoreProperties("category")  // one way to avoid infinite loop during JSON serialization/deserialization
 	private List<Book>Books;
 	
 	public Category() {}
