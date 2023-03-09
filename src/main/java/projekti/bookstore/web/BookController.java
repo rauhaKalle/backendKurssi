@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import fi.haagahelia.course.domain.Student;
 import projekti.bookstore.domain.Book;
 import projekti.bookstore.domain.BookRepository;
 import projekti.bookstore.domain.CategoryRepository;
